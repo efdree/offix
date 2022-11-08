@@ -1,0 +1,42 @@
+<p style="color: green"><%= notice %></p>
+
+<div>
+  <%if @department.cover.attached? %>
+    <div>
+      <%= image_tag(@department.cover, all: "Cover department") %>
+    </div>
+  <% end %>
+  <p>
+    <strong>Name:</strong>
+    <%= @department.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @department.description %>
+  </p>
+
+  <%= link_to "New Employee", new_employee_path%>
+
+  <p>
+    <strong>Employees count:</strong>
+    <%= @department.employees_count %>
+  </p>
+  <%= link_to "Edit this department", edit_department_path(@department) %> |
+  <%= link_to "Back to departments", departments_path %>
+
+  <%= button_to "Destroy this department", @department, method: :delete %>
+</div>
+<div>
+  <% @department.employees.each do |employee| %>
+    <%= render "employees/employee_card" , employee: employee%>
+  <% end %>
+</div>
+
+<h3>Feedback</h3>
+  <%= render "feedbacks/form", {feedback: Feedback.new, feedbackable: @department } %>
+  <hr>
+  <% @department.receive_feedbacks.each do |feedback| %>
+    <p>By <%= feedback.employee.name %></p>
+    <p><%= feedback.body %></p>
+    <%= button_to "Destroy", feedback, method: :delete %>
+  <% end %>

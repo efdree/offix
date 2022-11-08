@@ -1,0 +1,19 @@
+<div id="<%= dom_id department %>">
+  <div>
+    <% if department.cover.attached? %>
+      <div>
+        <%= image_tag(department.cover, alt: "Cover Departament")%>
+      </div>
+    <% end %>
+  </div>
+  <p>
+    <strong>Name:</strong>
+    <strong><%= department.name %></strong>
+  </p>
+
+  <p>
+    <%= department.employees_count %> Employees
+  </p>
+  <%= link_to "Edit", edit_department_path(department) %>
+  <%= button_to "Destroy", department, method: :delete %>
+</div>

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nationality: MyString
+  email: MyString
+  position: MyString
+  department: one
+  birth_date: 2022-10-02
+  manager: one
+  role: 1
+
+two:
+  name: MyString
+  nationality: MyString
+  email: MyString
+  position: MyString
+  department: two
+  birth_date: 2022-10-02
+  manager: two
+  role: 1

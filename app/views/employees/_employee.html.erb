@@ -1,0 +1,50 @@
+<div id="<%= dom_id employee %>">
+  <div>
+    <% if employee.avatar.attached? %>
+      <%= image_tag employee.avatar%>
+    <% end %>
+  </div>
+    <p>
+    <%= employee.name %>
+  </p>
+  <p>
+    <%= employee.position %>
+  </p>
+    <p>
+    <%= employee.department.name %>
+  </p>
+  <p>
+    <%= employee.nationality %>
+  </p>
+  <p>
+    <% if employee.birth_date %>
+      <%= ((Time.zone.now - employee.birth_date.to_time) / 1.year.seconds).floor  %>
+      years
+    <% else %>
+      No birth date
+    <% end %>
+  </p>
+  <p>
+   <strong>Manager</strong>
+   <% if employee.manager_id %>
+     <%= render "employee_card", employee: employee %>
+   <% else %>
+      No Manager
+    <% end %>
+  </p>
+  <p>
+   <strong>Reports</strong>
+    <% employee.reports.each do |report| %>
+      <%= render "employee_card", employee: report %>
+    <% end %>
+    <%= "No reports" if employee.reports.empty? %>
+  </p>
+
+  <h3>Feedback</h3>
+  <%= render "feedbacks/form", {feedback: Feedback.new, feedbackable: employee } %>
+  <hr>
+  <% employee.receive_feedbacks.each do |feedback| %>
+    <p>By <%= feedback.employee.name %></p>
+    <p><%= feedback.body %></p>
+  <% end %>
+</div>
