@@ -1,22 +1,10 @@
-.section {
-  padding: 64px 16px;
+.main {
+  width: 360px;
+  margin: 0 auto;
+  background-color: white;
 }
 
-.section-sm {
-  padding: 32px;
-}
-
-.container {
-  max-width: 760px;
-  margin: auto;
-}
-
-.container-lg {
-  max-width: 1024px;
-  margin: auto;
-}
-
-.container-xl {
-  max-width: 1280px;
-  margin: auto;
+.header {
+  background-color: #F2F2F2;
+  padding: 19px 16px;
 }

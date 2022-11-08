@@ -11,22 +11,22 @@
   </head>
 
   <body>
-    <header>
+    <div class="main">
+    <header class="header">
       <%= link_to root_path do %>
-        <h2>OFFIX</h2>
+        <%= image_tag("/images/logo.svg", alt:"Logo")%>
       <% end %>
       <%if employee_signed_in? %>
         Welcome <%= current_employee.name %>
-        <%= link_to "Sign out", destroy_employee_session_path, data { turbo_method :delete}%>
+        <%= link_to "Sign out", destroy_employee_session_path, data: { "turbo_method": :delete}%>
       <%end%>
     </header>
-    <hr>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <hr>
     <footer>
       Codeable C7 - 2022
     </footer>
+    </div>
   </body>
 </html>
