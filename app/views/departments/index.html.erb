@@ -1,9 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="title">Departments</h1>
 
-<h1>Departments</h1>
-
+<div class="button--department">
+  <%= link_to "NEW DEPARTMENT", new_department_path %>
+</div>
 <div id="departments">
-<%= link_to "New department", new_department_path %>
   <% @departments.each do |department| %>
     <%= render department %>
     <p>
