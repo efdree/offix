@@ -16,6 +16,14 @@
   height: 12px;
 }
 
+.footer {
+  background-color: #F2F2F2;
+  padding: 19px 16px;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* Department */
 
 .title{
@@ -66,6 +74,7 @@
   font-weight: 600;
   font-family: var(--font-secondary);
   line-height: 32px;
+  color: var(---gray-400);
 }
 
 .department--card__count{
@@ -87,4 +96,52 @@
   background-color: var(--secondary-300);
   padding: 8px;
   border-radius: 50%;
+}
+
+/*New Department*/
+
+.new--department{
+  margin: 0px 16px;
+}
+
+.buttom--department__create{
+  background-color: var(--secondary-300);
+  color: white;
+  border: none;
+  margin: 16px auto;
+  padding: 8px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.buttom--department__back{
+  background-color: var(--gray-100);
+  border: none;
+  margin: 16px auto;
+  padding: 8px;
+  text-align: center;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.label--department{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.input--department{
+  border: 1px solid #D3D3D3;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }

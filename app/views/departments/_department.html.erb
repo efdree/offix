@@ -4,7 +4,7 @@
     <% end %>
   <div class="department--card__title">
     <p class="department--card__name">
-      <strong><%= department.name %></strong>
+      <strong><%= link_to department.name, department %></strong>
     </p>
     <p class="department--card__count">
       <%= department.employees_count %> employees

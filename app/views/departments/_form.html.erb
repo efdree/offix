@@ -12,21 +12,22 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, style: "display: block", class: "label--department" %>
+    <%= form.text_field :name, class: "input input--department", placeholder: "Secret planning" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.label :description, style: "display: block", class: "label--department" %>
+    <%= form.text_area :description, class: "input input--department", placeholder: "This is the best department yet..." %>
   </div>
 
   <div>
-    <%= form.label :cover, style: "display: block" %>
-    <%= form.file_field :cover %>
+    <%= form.label :cover, style: "display: block", class: "label--department"%>
+    <%= form.file_field :cover, class: "input" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "input buttom--department__create" %>
   </div>
+  <%= link_to "Back", departments_path, class: "input buttom--department__back"%>
 <% end %>
