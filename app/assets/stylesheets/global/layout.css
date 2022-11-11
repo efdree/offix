@@ -145,3 +145,112 @@
   font-size: 16px;
   line-height: 24px;
 }
+
+.description--department{
+  margin: 16px auto;
+}
+
+/* employee */
+
+.employee--card{
+  margin: 28px 0px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.buttom--employee__create{
+  background-color: var(--secondary-300);
+  color: white;
+  border: none;
+  margin: 16px auto;
+  padding: 8px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  text-transform: uppercase;
+  align-items: center;
+}
+.employee--avatar{
+  width: 64px;
+  height: 64px;
+}
+
+.employee--details{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.employee--avatar > img {
+  border-radius: 50%;
+}
+
+.employee--card__link{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 8px;
+}
+
+.employee--card__link > a {
+  background-color: var(--secondary-300);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.employee--name{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.employee--position{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.department--information{
+  margin-top: 28px;
+}
+
+/* feedback */ 
+
+.feedback--card{
+  border-top: 2px solid #D3D3D3;
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+
+.feedback--link{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0px;
+  align-items: center;
+  gap: 8px;
+}
+
+.feedback--link > a {
+  background-color: var(--secondary-300);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.feedback--name{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.feedback--body{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.feedback--created{
+  font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+color: #7A7A7A;
+}

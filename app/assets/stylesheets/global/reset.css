@@ -22,6 +22,9 @@ dd {
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 a{
  text-decoration: none;
+ text-decoration-line: none;
+ text-decoration-color: none;
+ text-decoration-style: none;
 }
 
 ul[role="list"],

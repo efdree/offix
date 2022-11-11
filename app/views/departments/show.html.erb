@@ -1,42 +1,36 @@
-<p style="color: green"><%= notice %></p>
-
 <div>
-  <%if @department.cover.attached? %>
-    <div>
-      <%= image_tag(@department.cover, all: "Cover department") %>
-    </div>
-  <% end %>
-  <p>
-    <strong>Name:</strong>
-    <%= @department.name %>
-  </p>
-  <p>
-    <strong>Description:</strong>
+    <p class="title">
+      <%= @department.name %>
+    </p>
+    
+</div>
+<div class="new--department">
+  <p class="description--department">
     <%= @department.description %>
   </p>
 
-  <%= link_to "New Employee", new_employee_path%>
+  <%= link_to "New Employee", new_employee_path, class: "buttom--employee__create"%>
 
-  <p>
-    <strong>Employees count:</strong>
-    <%= @department.employees_count %>
-  </p>
-  <%= link_to "Edit this department", edit_department_path(@department) %> |
-  <%= link_to "Back to departments", departments_path %>
-
-  <%= button_to "Destroy this department", @department, method: :delete %>
+  <div class="department--information">
+    <h4>Employees</h4>
+    <% @department.employees.each do |employee| %>
+      <%= render "employees/employee_card" , employee: employee%>
+    <% end %>
+  </div>
+  <div class="department--information">
+    <h4>Feedback</h4>
+    <%= render "feedbacks/form", {feedback: Feedback.new, feedbackable: @department } %>
+  
+    <% @department.receive_feedbacks.each do |feedback| %>
+    <div class="feedback--card">
+      <p class="feedback--name">By <%= feedback.employee.name %></p>
+      <p class="feedback--body"><%= feedback.body %></p>
+      <div class="feedback--link">
+        <p class="feedback--created"><%= feedback.created_at %></p>
+        <%= link_to image_tag("trash.png", alt: "Trash"), feedback, method: :delete %>
+      </div>
+    </div>
+    <% end %>
+    <%= link_to "Back", departments_path, class: "input buttom--department__back"%>
+  </div>
 </div>
-<div>
-  <% @department.employees.each do |employee| %>
-    <%= render "employees/employee_card" , employee: employee%>
-  <% end %>
-</div>
-
-<h3>Feedback</h3>
-  <%= render "feedbacks/form", {feedback: Feedback.new, feedbackable: @department } %>
-  <hr>
-  <% @department.receive_feedbacks.each do |feedback| %>
-    <p>By <%= feedback.employee.name %></p>
-    <p><%= feedback.body %></p>
-    <%= button_to "Destroy", feedback, method: :delete %>
-  <% end %>
