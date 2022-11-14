@@ -1,22 +1,23 @@
 <div id="<%= dom_id employee %>">
-  <div>
+<div class="new--department">
+  <div class="avatar--imagen">
     <% if employee.avatar.attached? %>
       <%= image_tag employee.avatar%>
     <% end %>
   </div>
-    <p>
+  <p class="employee--name__details">
     <%= employee.name %>
   </p>
-  <p>
+  <p class="employee--position__details">
     <%= employee.position %>
   </p>
-    <p>
+    <p class="employee--deptname__details">
     <%= employee.department.name %>
   </p>
-  <p>
+  <p class="employee--nationality__details">
     <%= employee.nationality %>
   </p>
-  <p>
+  <p class="employee--years">
     <% if employee.birth_date %>
       <%= ((Time.zone.now - employee.birth_date.to_time) / 1.year.seconds).floor  %>
       years
@@ -24,6 +25,11 @@
       No birth date
     <% end %>
   </p>
+
+<div class="employee--link">
+  <%= link_to image_tag("edit.png", alt: "Edit"), edit_employee_path(employee) %>
+  <%= link_to image_tag("trash.png", alt: "Trash"), employee, method: :delete %>
+</div>
   <p>
    <strong>Manager</strong>
    <% if employee.manager_id %>
@@ -41,10 +47,18 @@
   </p>
 
   <h3>Feedback</h3>
+  
   <%= render "feedbacks/form", {feedback: Feedback.new, feedbackable: employee } %>
-  <hr>
   <% employee.receive_feedbacks.each do |feedback| %>
-    <p>By <%= feedback.employee.name %></p>
-    <p><%= feedback.body %></p>
+  <div class="feedback--card">
+    <p class="feedback--name">By <%= feedback.employee.name %></p>
+    <p class="feedback--body"><%= feedback.body %></p>
+    <div class="feedback--link">
+        <p class="feedback--created"><%= feedback.created_at %></p>
+        <%= link_to image_tag("trash.png", alt: "Trash"), feedback, method: :delete %>
+    </div>
+  </div>
   <% end %>
+  <%= link_to "Back", departments_path , class: "input buttom--department__back"%>
+</div>
 </div>

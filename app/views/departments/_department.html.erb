@@ -12,6 +12,6 @@
   </div>
   <div class="department--card__link">
     <%= link_to image_tag("edit.png", alt: "Edit"), edit_department_path(department) %>
-    <%= link_to image_tag("trash.png", alt: "Trash"), department, method: :delete %>
+    <%= link_to image_tag("trash.png", alt: "Trash"), department, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
 </div>

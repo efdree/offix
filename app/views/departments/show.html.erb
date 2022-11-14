@@ -19,6 +19,7 @@
   </div>
   <div class="department--information">
     <h4>Feedback</h4>
+    
     <%= render "feedbacks/form", {feedback: Feedback.new, feedbackable: @department } %>
   
     <% @department.receive_feedbacks.each do |feedback| %>
@@ -27,7 +28,7 @@
       <p class="feedback--body"><%= feedback.body %></p>
       <div class="feedback--link">
         <p class="feedback--created"><%= feedback.created_at %></p>
-        <%= link_to image_tag("trash.png", alt: "Trash"), feedback, method: :delete %>
+        <%= link_to image_tag("trash.png", alt: "Trash"), feedback, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
     </div>
     <% end %>
