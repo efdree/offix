@@ -12,3 +12,4 @@ Department.destroy
 sales = Department.create(name: "Sales", description:"Department of Sales")
 
 erik = Employee.create(name: "Erik", email: "e@mail.com", password: "123456", department_id: 1)
+maria = Employee.create(name: "Maria", email: "m@mail.com", password: "123456", department_id: 1)
